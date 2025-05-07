@@ -210,8 +210,8 @@ const ParticlesBackground = ({ children }: ParticlesBackgroundProps) => {
         }
         @media (max-width: 480px) {
           .text-container {
-            font-size: 14vw;
-            top: 37%;
+            font-size: 8vw;
+            top: 50%;
             left: 14%;
           }
           .text {
