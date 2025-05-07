@@ -73,6 +73,8 @@ const ParticlesBackground = ({ children }: ParticlesBackgroundProps) => {
     <div style={{
       width: '100vw',
       height: '60vh',
+      margin: 0,
+      padding: 0,
       position: 'absolute',
       overflow: 'hidden',
       background: 'linear-gradient(40deg, #000, #000)',
