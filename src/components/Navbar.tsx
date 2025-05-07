@@ -46,14 +46,14 @@ const Navbar: React.FC = () => {
       className={`fixed top-0 left-1/2 transform -translate-x-1/2 z-50 py-3 rounded-b-[80px] transition-all duration-300
         backdrop-blur-[20px] backdrop-saturate-[180%] bg-white/25 border border-white/30
         flex justify-center overflow-x-auto
-        w-[25%] 
-        lg:w-[80%] 
-        md:w-[90%] 
-        sm:w-[96%] sm:h-[3%]
+        w-[95%] 
+        lg:w-[30%] 
+        md:w-[50%] 
+        sm:w-[96%] sm:h-[5%]
         ${scrolled ? "shadow-md" : ""}
       `}
     >
-      <ul className="flex flex-nowrap justify-center items-center gap-7 md:gap-5 sm:gap-4 m-0 p-0 whitespace-nowrap list-none">
+      <ul className="flex flex-nowrap justify-center items-center gap-2 lg:gap-9 md:gap-5 sm:gap-4 m-0 p-0 whitespace-nowrap list-none">
         {sections.map((sectionId) => (
           <li key={sectionId} className="mx-2 shrink-0">
             <a
@@ -62,7 +62,7 @@ const Navbar: React.FC = () => {
                 e.preventDefault();
                 scrollToSection(sectionId);
               }}
-              className={`no-underline text-black text-base md:text-[15px] sm:text-[14px] transition-transform duration-200 inline-block
+              className={`no-underline text-black text-base lg:text-[18px] md:text-[15px] sm:text-[14px] transition-transform duration-200 inline-block
                 hover:scale-150 md:hover:scale-[1.3] sm:hover:scale-[1.2] 
                 ${activeSection === sectionId ? "font-bold" : ""}
               `}
