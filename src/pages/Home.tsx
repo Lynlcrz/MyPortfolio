@@ -86,96 +86,90 @@ export default function Home() {
 
       <Navbar/>
 
+      {/* Home Section */}
       <section 
         id="home" 
         className="relative min-h-screen overflow-hidden bg-white flex flex-col items-center justify-center"
       >
-        <div 
-          className="particles-background-container absolute inset-0 h-[70vh] z-20"
-        >
+        <div className="particles-background-container absolute inset-0 h-[70vh] md:h-[80vh] lg:h-[90vh] z-20">
           <ParticlesBackground />
         </div>
 
-        <div 
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[200] 
-                     flex items-center justify-center w-[80vw] max-w-[400px] sm:max-w-[300px]"
-        >
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[200] 
+                       flex items-center justify-center w-[80vw] max-w-[400px] 
+                       sm:max-w-[300px] xs:max-w-[250px] 2xl:max-w-[500px]">
           <img 
             src={Profile} 
             alt="Profile" 
-            className="w-full h-auto rounded-full object-cover"
+            className="w-full h-auto rounded-full object-cover shadow-xl"
           />
         </div>
 
-        <div 
-          className="absolute bottom-[5%] left-1/2 transform -translate-x-1/2 w-[200px] h-[60px] 
-                     bg-white/15 backdrop-blur-lg backdrop-saturate-160 border border-white/20 
-                     p-2 rounded-xl flex justify-center items-center gap-3 z-40 transition-all
-                     sm:w-[180px] sm:h-[50px] sm:gap-2"
-        >
+        <div className="absolute bottom-[5%] left-1/2 transform -translate-x-1/2 
+                       w-[200px] h-[60px] md:w-[220px] md:h-[65px] lg:w-[240px] lg:h-[70px]
+                       xs:w-[180px] xs:h-[50px] 2xl:w-[260px] 2xl:h-[75px]
+                       bg-white/15 backdrop-blur-lg backdrop-saturate-160 border border-white/20 
+                       p-2 rounded-xl flex justify-center items-center gap-3 z-40 transition-all
+                       hover:bg-white/25 hover:shadow-md">
           <img 
             src={githubIcon} 
             alt="GitHub Icon" 
-            className="w-[30px] h-[30px] transition-transform hover:scale-110 sm:w-[25px] sm:h-[25px]"
+            className="w-[30px] h-[30px] md:w-[32px] md:h-[32px] lg:w-[34px] lg:h-[34px]
+                      xs:w-[26px] xs:h-[26px] 2xl:w-[36px] 2xl:h-[36px]
+                      transition-transform hover:scale-110"
           />
           <img 
             src={linkedinIcon} 
             alt="LinkedIn Icon" 
-            className="w-[30px] h-[30px] transition-transform hover:scale-110 sm:w-[25px] sm:h-[25px]"
+            className="w-[30px] h-[30px] md:w-[32px] md:h-[32px] lg:w-[34px] lg:h-[34px]
+                      xs:w-[26px] xs:h-[26px] 2xl:w-[36px] 2xl:h-[36px]
+                      transition-transform hover:scale-110"
           />
           <img 
             src={cvIcon} 
             alt="CV Icon" 
-            className="w-[38px] h-[38px] transition-transform hover:scale-110 sm:w-[30px] sm:h-[30px]"
+            className="w-[38px] h-[38px] md:w-[40px] md:h-[40px] lg:w-[42px] lg:h-[42px]
+                      xs:w-[32px] xs:h-[32px] 2xl:w-[44px] 2xl:h-[44px]
+                      transition-transform hover:scale-110"
           />
         </div>
       </section>
 
+      {/* Main Content Sections */}
       <main className="relative z-10">
-        <section 
-          id="about" 
-          className="min-h-screen flex items-center justify-center bg-white text-gray-900 p-5"
-        >
-          <div className="text-center max-w-[36rem] px-4">
-            <h2 className="text-3xl font-semibold">About Me</h2>
-            <p className="mt-4 text-base leading-relaxed">
-              I'm a web developer passionate about building great experiences.
-            </p>
-          </div>
-        </section>
+        {/* About Section */}
 
-        <section 
-          id="projects" 
-          className="min-h-screen flex items-center justify-center bg-white text-gray-900 p-5"
-        >
-          <div className="text-center max-w-[48rem] px-4">
-            <h2 className="text-3xl font-semibold">Projects</h2>
-            <p className="mt-4 text-base leading-relaxed">
-              Take a look at some of the projects I've built with love.
-            </p>
-          </div>
-        </section>
 
-        <section 
-          id="contact" 
-          className="min-h-screen flex items-center justify-center bg-white text-white p-5"
-        >
-          <div className="text-center max-w-[36rem] px-4">
-            <h2 className="text-3xl font-semibold">Contact</h2>
-            <p className="mt-4 text-base leading-relaxed text-gray-200">
-              Let's work together! Get in touch with me.
-            </p>
-          </div>
-        </section>
+{/* About Section */}
+<section id="about" className="min-h-screen flex items-center justify-center bg-white text-gray-900 p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-16">
+  <div className="text-center w-[90vw] max-w-[64rem]">
+    <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold mb-6 md:mb-8">About Me</h2>
+    <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl leading-relaxed">
+      I'm a web developer passionate about building great experiences.
+    </p>
+  </div>
+</section>
+
+{/* Projects Section */}
+<section id="projects" className="min-h-screen flex items-center justify-center bg-white text-gray-900 p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-16">
+  <div className="text-center w-[90vw] max-w-[80rem]">
+    <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold mb-6 md:mb-8">Projects</h2>
+    <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl leading-relaxed">
+      Take a look at some of the projects I've built with love.
+    </p>
+  </div>
+</section>
+
+{/* Contact Section */}
+<section id="contact" className="min-h-screen flex items-center justify-center bg-gray-900 text-white p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-16">
+  <div className="text-center w-[90vw] max-w-[64rem]">
+    <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold mb-6 md:mb-8">Contact</h2>
+    <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl leading-relaxed text-gray-300">
+      Let's work together! Get in touch with me.
+    </p>
+  </div>
+</section>
       </main>
-
-      <style>{`
-        @media (max-width: 640px) {
-          .particles-background-container {
-            height: 60vh;
-          }
-        }
-      `}</style>
     </div>
   );
 }

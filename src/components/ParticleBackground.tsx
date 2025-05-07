@@ -70,8 +70,18 @@ const ParticlesBackground = ({ children }: ParticlesBackgroundProps) => {
   }, [isMouseDown, lastY]);
 
   return (
-    <div className="w-full h-[60vh] absolute overflow-hidden top-0 left-0 z-10 bg-gradient-to-br from-black to-black shadow-lg">
-      <svg className="fixed top-0 left-0 w-0 h-0">
+    <div style={{
+      width: '100vw',
+      height: '60vh',
+      position: 'absolute',
+      overflow: 'hidden',
+      background: 'linear-gradient(40deg, #000, #000)',
+      top: 0,
+      left: 0,
+      boxShadow: '0 30px 25px rgba(0, 0, 0, 0.5)',
+      zIndex: 1
+    }}>
+      <svg style={{ position: 'fixed', top: 0, left: 0, width: 0, height: 0 }}>
         <defs>
           <filter id="goo">
             <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
@@ -86,41 +96,131 @@ const ParticlesBackground = ({ children }: ParticlesBackgroundProps) => {
         </defs>
       </svg>
 
-      <h1 className="z-[100] w-full h-full absolute top-[10%] left-[15%] text-6xl sm:text-4xl xs:text-3xl text-white opacity-30 font-sans m-0">
-        Hi, I'm Niel
-      </h1>
+      <h1 style={{
+        zIndex: 100,
+        width: '100vw',
+        height: '100vh',
+        display: 'flex',
+        position: 'absolute',
+        top: '10%',
+        left: '15%',
+        fontSize: '6vw',
+        color: 'white',
+        opacity: 0.3,
+        textShadow: '1px 1px rgba(0, 0, 0, 0.1)',
+        fontFamily: "'Dongle', sans-serif",
+        margin: 0
+      }}>Hi, I'm Niel</h1>
 
-      <h3 className="z-[100] w-full h-full absolute text-2xl sm:text-xl xs:text-lg top-[43%] left-[15%] text-white opacity-30 font-sans m-0">
-        Lyniel Cris S. Aya-ay
-      </h3>
+      <h3 style={{
+        zIndex: 100,
+        width: '100vw',
+        height: '100vh',
+        display: 'flex',
+        position: 'absolute',
+        fontSize: '2vw',
+        top: '43%',
+        left: '15%',
+        color: 'white',
+        opacity: 0.3,
+        textShadow: '1px 1px rgba(0, 0, 0, 0.1)',
+        fontFamily: "'Dongle', sans-serif",
+        margin: 0
+      }}>Lyniel Cris S. Aya-ay</h3>
 
-      <div className="w-full h-full filter-[url(#goo)_blur(40px)] shadow-lg">
+      <div style={{
+        filter: 'url(#goo) blur(40px)',
+        width: '100%',
+        height: '100%',
+        boxShadow: '0 30px 25px rgba(0, 0, 0, 0.5)'
+      }}>
         {[...Array(10)].map((_, i) => (
-          <div 
-            key={i} 
-            className="absolute mix-blend-overlay rounded-full"
-            style={{
-              width: `${i < 4 ? '20%' : i < 7 ? '30%' : '40%'}`,
-              height: `${i < 4 ? '20%' : i < 7 ? '30%' : '40%'}`,
-              ...getGradientStyle(i + 1)
-            }}
-          />
+          <div key={i} style={{
+            position: 'absolute',
+            mixBlendMode: 'overlay',
+            width: '20%',
+            height: '20%',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            borderRadius: '50%',
+            ...getGradientStyle(i + 1)
+          }} />
         ))}
-        <div 
-          ref={interactiveRef} 
-          className="absolute mix-blend-overlay rounded-full pointer-events-none opacity-100 z-[101]"
-          style={{
-            background: 'radial-gradient(circle at center, rgba(220, 220, 220, 0.8) 0, rgba(220, 220, 220, 0) 50%)',
-            width: '300px',
-            height: '300px',
-            transform: 'translate(-50%, -50%)'
-          }}
-        />
+        <div ref={interactiveRef} style={{
+          position: 'absolute',
+          background: 'radial-gradient(circle at center, rgba(220, 220, 220, 0.8) 0, rgba(220, 220, 220, 0) 50%) no-repeat',
+          mixBlendMode: 'overlay',
+          width: '300px',
+          height: '300px',
+          borderRadius: '50%',
+          pointerEvents: 'none',
+          opacity: 1,
+          zIndex: 101,
+          transform: 'translate(-50%, -50%)'
+        }}></div>
       </div>
 
-      <div className="absolute inset-0 z-[10] flex items-center justify-center text-center px-4">
+      <div style={{
+        position: 'absolute',
+        inset: 0,
+        zIndex: 10,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        textAlign: 'center',
+        paddingLeft: '1rem',
+        paddingRight: '1rem'
+      }}>
         {children}
       </div>
+
+      <style>{`
+        @keyframes moveInCircle {
+          0% { transform: rotate(0deg); }
+          50% { transform: rotate(180deg); }
+          100% { transform: rotate(360deg); }
+        }
+        @keyframes moveVertical {
+          0% { transform: translateY(-50%); }
+          50% { transform: translateY(50%); }
+          100% { transform: translateY(-50%); }
+        }
+        @keyframes moveHorizontal {
+          0% { transform: translateX(-50%) translateY(-10%); }
+          50% { transform: translateX(50%) translateY(10%); }
+          100% { transform: translateX(-50%) translateY(-10%); }
+        }
+        @keyframes moveRight {
+          0% { transform: translateX(0%); }
+          50% { transform: translateX(100%); }
+          100% { transform: translateX(0%); }
+        }
+        @media (max-width: 768px) {
+          .text-container {
+            font-size: 18vw;
+            top: 10%;
+            left: 5%;
+          }
+          .text {
+            font-size: 10vw;
+            top: 40%;
+            left: 5%;
+          }
+        }
+        @media (max-width: 480px) {
+          .text-container {
+            font-size: 14vw;
+            top: 37%;
+            left: 14%;
+          }
+          .text {
+            font-size: 6vw;
+            top: 55%;
+            left: 20%;
+          }
+        }
+      `}</style>
     </div>
   );
 };
@@ -167,18 +267,24 @@ function getGradientStyle(index: number) {
     },
     {
       background: `radial-gradient(circle at center, ${color} 0, rgba(180, 180, 180, 0) 50%)`,
+      width: '40%',
+      height: '40%',
       top: 'calc(20% - 20%)',
       left: 'calc(10% - 20%)',
       animation: 'moveRight 30s ease-in-out infinite'
     },
     {
       background: `radial-gradient(circle at center, rgba(150, 150, 150, 0.6) 0, rgba(150, 150, 150, 0) 50%)`,
+      width: '30%',
+      height: '30%',
       top: 'calc(30% - 15%)',
       left: 'calc(15% - 15%)',
       animation: 'moveRight 35s linear infinite'
     },
     {
       background: `radial-gradient(circle at center, rgba(200, 200, 200, 0.7) 0, rgba(200, 200, 200, 0) 50%)`,
+      width: '24%',
+      height: '24%',
       top: 'calc(50% - 10% + 100px)',
       left: 'calc(50% - 10% - 600px)',
       transformOrigin: 'calc(50% + 500px)',
@@ -186,18 +292,24 @@ function getGradientStyle(index: number) {
     },
     {
       background: `radial-gradient(circle at center, rgba(120, 120, 120, 0.7) 0, rgba(120, 120, 120, 0) 50%)`,
+      width: '40%',
+      height: '40%',
       top: '10%',
       left: '5%',
       animation: 'moveRight 40s ease infinite'
     },
     {
       background: `radial-gradient(circle at center, rgba(180, 180, 180, 0.6) 0, rgba(180, 180, 180, 0) 50%)`,
+      width: '36%',
+      height: '36%',
       top: '40%',
       left: '10%',
       animation: 'moveRight 25s ease-in-out infinite'
     },
     {
       background: `radial-gradient(circle at center, rgba(100, 100, 100, 0.5) 0, rgba(100, 100, 100, 0) 50%)`,
+      width: '30%',
+      height: '30%',
       top: 'calc(50% - 20%)',
       left: 'calc(50% - 20%)',
       transformOrigin: 'center center',
