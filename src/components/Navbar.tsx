@@ -35,19 +35,22 @@ const Navbar: React.FC<NavbarProps> = ({ className = "", ...rest }) => {
         }
       }
 
-      setActiveSection(current);
+      // Ensure the active section is updated
+      if (current !== activeSection) {
+        setActiveSection(current);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll();
+    handleScroll(); // Initial scroll position check
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [activeSection]); // Ensure re-runs when activeSection changes
 
   return (
     <nav
       {...rest}
       className={`fixed top-0 left-1/2 transform -translate-x-1/2 py-3 rounded-b-[80px] transition-all duration-300
-        backdrop-blur-[20px] backdrop-saturate-[180%] bg-white/25 border border-white/30
+        backdrop-blur-[20px] backdrop-saturate-[180%] bg-white/25
         flex justify-center overflow-x-auto
         w-[95%] 
         lg:w-[30%] 

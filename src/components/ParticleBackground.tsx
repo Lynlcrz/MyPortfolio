@@ -71,16 +71,17 @@ const ParticlesBackground = ({ children }: ParticlesBackgroundProps) => {
 
   return (
     <div style={{
-      width: '100vw',
+      width: '100%',
       height: '60vh',
       margin: 0,
       padding: 0,
       position: 'absolute',
       overflow: 'hidden',
-      background: 'linear-gradient(40deg, #000, #000)',
+      borderRadius: '0 0 15rem 15rem',
+      background: 'linear-gradient(40deg,rgb(38, 48, 63),rgb(39, 48, 70))',
       top: 0,
       left: 0,
-      boxShadow: '0 30px 25px rgba(0, 0, 0, 0.5)',
+      boxShadow: 'inset 0 -30px 25px rgba(0, 0, 0, 0.5)', 
       zIndex: 1
     }}>
       <svg style={{ position: 'fixed', top: 0, left: 0, width: 0, height: 0 }}>
@@ -98,33 +99,28 @@ const ParticlesBackground = ({ children }: ParticlesBackgroundProps) => {
         </defs>
       </svg>
 
-      <h1 style={{
-  zIndex: 100,
-  width: 'fit-content',
-  whiteSpace: 'nowrap',
-  overflow: 'hidden',
-  borderRight: '3px solid rgba(255, 255, 255, 0.6)',
-  animation: 'typing 3s steps(20, end) infinite alternate, blink 0.75s step-end infinite',
-  height: '100vh',
-  display: 'flex',
-  position: 'absolute',
-  top: '19%',
-  left: '15%',
-  fontSize: '6vw',
-  color: 'white',
-  opacity: 0.3,
-  textShadow: '1px 1px rgba(0, 0, 0, 0.1)',
-  fontFamily: "'Dongle', sans-serif",
-  margin: 0
-}}>
-  Hi, I'm Niel
-</h1>
+     <h1 style={{
+        zIndex: 100,
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
+        borderRight: '3px solid rgba(255, 255, 255, 0.6)',
+        animation: 'typing 3s steps(20, end) infinite alternate, blink 0.75s step-end infinite',
+        height: '100vh',
+        position: 'absolute',
+        top: '19%',
+        left: '15%',
+        fontSize: '6vw',
+        color: 'white',
+        opacity: 0.3,
+        textShadow: '1px 1px rgba(0, 0, 0, 0.1)',
+        fontFamily: "'Dongle', sans-serif",
+        margin: 0
+      }}>
+        Hi, I'm Niel
+      </h1>
 
       <h3 style={{
         zIndex: 100,
-        width: '100vw',
-        height: '100vh',
-        display: 'flex',
         position: 'absolute',
         fontSize: '2vw',
         top: '45%',
@@ -134,7 +130,10 @@ const ParticlesBackground = ({ children }: ParticlesBackgroundProps) => {
         textShadow: '1px 1px rgba(0, 0, 0, 0.1)',
         fontFamily: "'Dongle', sans-serif",
         margin: 0
-      }}>Lyniel Cris S. Aya-ay</h3>
+      }}>
+        Lyniel Cris S. Aya-ay
+      </h3>
+
 
       <div style={{
         filter: 'url(#goo) blur(40px)',
@@ -215,28 +214,29 @@ const ParticlesBackground = ({ children }: ParticlesBackgroundProps) => {
           50% { transform: translateX(100%); }
           100% { transform: translateX(0%); }
         }
-        @media (max-width: 768px) {
-          .text-container {
-            font-size: 18vw;
-            top: 10%;
-            left: 5%;
+  @media (max-width: 768px) {
+          h1 {
+            font-size: 12vw !important;
+            top: 10% !important;
+            left: 5% !important;
           }
-          .text {
-            font-size: 10vw;
-            top: 40%;
-            left: 5%;
+          h3 {
+            font-size: 6vw !important;
+            top: 40% !important;
+            left: 5% !important;
           }
         }
+
         @media (max-width: 480px) {
-          .text-container {
-            font-size: 8vw;
-            top: 50%;
-            left: 14%;
+          h1 {
+            font-size: 12vw !important;
+            top: 20% !important;
+            left: 21% !important;
           }
-          .text {
-            font-size: 6vw;
-            top: 55%;
-            left: 20%;
+          h3 {
+            font-size: 5vw !important;
+            top: 35% !important;
+            left: 28% !important;
           }
         }
       `}</style>
