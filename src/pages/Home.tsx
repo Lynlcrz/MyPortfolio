@@ -6,7 +6,7 @@ import carousel1 from '../assets/carousel1.png';
 import carousel2 from '../assets/carousel2.png';
 import cvIcon from "../assets/cv.png";
 import figmaIcon from "../assets/figma.png";
-import firebaseIcon from "../assets/firebase.png";
+import firebaseIcon from "../assets/Firebase.png";
 import gitIcon from "../assets/git.png";
 import githubIcon from "../assets/github.png";
 import GithubIcon from "../assets/Github1.png";
