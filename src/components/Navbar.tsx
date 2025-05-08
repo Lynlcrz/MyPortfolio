@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const sections = ["home", "about", "projects", "contact"];
+const sections = ["home", "skills", "projects", "contact"];
 
 type NavbarProps = React.HTMLAttributes<HTMLElement>;
 
