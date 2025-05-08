@@ -247,12 +247,12 @@ export default function Home() {
 
 
 
-  <div className="flex flex-col items-center">
+<div className="flex flex-col items-center">
   {[
     React, Unity, sisharp, jsIcon, typescriptIcon,
     javaIcon, vsCodeIcon, tailwindIcon, mongoDBIcon, mysqlIcon,
     gitIcon, GithubIcon, firebaseIcon, figmaIcon,
-  ].map((icon, index, arr) => {
+  ].map((_, index, arr) => {
     if (index % 5 === 0) {
       return (
         <div
@@ -273,6 +273,7 @@ export default function Home() {
     return null;
   })}
 </div>
+
 
 
 
