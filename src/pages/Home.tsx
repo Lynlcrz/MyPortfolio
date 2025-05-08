@@ -89,6 +89,7 @@ export default function Home() {
           margin: 0;
           padding: 0;
           height: 100%;
+          width: 100
           overflow-x: hidden;
           scroll-behavior: smooth;
           font-family: Arial, sans-serif;
@@ -100,38 +101,43 @@ export default function Home() {
       {/* Home Section */}
       <section
         id="home"
-        className="relative min-h-screen overflow-hidden bg-white flex flex-col items-center justify-center"
+        className="relative min-h-screen overflow-hidden bg-white flex items-center justify-center"
       >
-        <div className="particles-background-container absolute inset-0 h-[70vh] md:h-[80vh] lg:h-[90vh] z-20">
+        <div className="particles-background-container fixed absolute inset-0 h-[70vh] md:h-[80vh] lg:h-[90vh] z-0">
           <ParticlesBackground />
         </div>
 
         <div
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[200] 
+  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[200] 
              flex items-center justify-center w-[80vw] max-w-[400px] 
-             sm:max-w-[300px] xs:max-w-[250px] 2xl:max-w-[500px] 
+             xs:max-w-[250px] sm:max-w-[300px] 2xl:max-w-[500px] 
              group cursor-pointer"
-          onClick={handleConfetti}
-        >
-          <img
-            src={Profile}
-            alt="Profile"
-            className="w-full h-auto rounded-full object-cover shadow-xl transition-transform hover:scale-100"
-          />
-          <div
-            className="absolute inset-0 flex items-center justify-center 
-               rounded-full backdrop-blur-sm bg-white/20 
-               opacity-0 group-hover:opacity-20 
-               transition-opacity duration-300"
-          >
-            <span className="text-black text-[40px] text-lg font-semibold">Click me</span>
-          </div>
-        </div>
+  onClick={handleConfetti}
+>
+<div className="mb-40 sm:mb-6 md:mb-8 lg:mb-10 xl:mb-12">
+    <div className="relative w-70 sm:w-40 md:w-48 lg:w-[25rem] xl:w-[25rem]">
+      <img
+        src={Profile}
+        alt="Profile"
+        className="w-full h-auto rounded-full object-cover shadow-xl transition-transform duration-300 ease-in-out hover:scale-105"
+      />
+      <div
+        className="absolute inset-0 flex items-center justify-center 
+                   rounded-full backdrop-blur-sm bg-white/20 
+                   opacity-0 group-hover:opacity-20 
+                   transition-opacity duration-300"
+      >
+        <span className="text-black text-lg md:text-xl font-semibold">Click me</span>
+      </div>
+    </div>
+  </div>
+</div>
+
 
         <div className="absolute bottom-[5%] left-1/2 transform -translate-x-1/2 
                        w-[200px] h-[60px] md:w-[220px] md:h-[65px] lg:w-[240px] lg:h-[70px]
                        xs:w-[180px] xs:h-[50px] 2xl:w-[260px] 2xl:h-[75px]
-                       bg-white/15 backdrop-blur-lg backdrop-saturate-160 border border-white/20 
+                       bg-white/0 
                        p-2 rounded-xl flex justify-center items-center gap-3 z-40 transition-all
                        hover:bg-white/25 hover:shadow-md">
           <a href="https://github.com/Lynlcrz" target="_blank" rel="noopener noreferrer">
@@ -167,7 +173,7 @@ export default function Home() {
         {/* About */}
         <section
           id="about"
-          className="min-h-screen flex flex-col items-center justify-center bg-white text-gray-900 p-6 md:p-8"
+          className="min-h-screen flex flex-col items-center justify-center bg-white text-black p-6 md:p-8"
         >
           <div className="text-center w-[90vw] max-w-[64rem] mb-12">
             <h2 className="text-5xl font-semibold mb-6">About Me</h2>
@@ -198,7 +204,7 @@ export default function Home() {
         {/* Projects */}
         <section
           id="projects"
-          className="min-h-screen flex items-center justify-center bg-white text-gray-900 p-6"
+          className="min-h-screen flex items-center justify-center bg-white text-black p-6"
         >
           <div className="text-center w-[90vw] max-w-[80rem]">
             <h2 className="text-5xl font-semibold mb-6">Projects</h2>
