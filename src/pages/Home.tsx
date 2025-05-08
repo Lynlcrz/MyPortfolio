@@ -114,8 +114,8 @@ export default function Home() {
              group cursor-pointer"
   onClick={handleConfetti}
 >
-<div className="mb-40 sm:mb-6 md:mb-8 lg:mb-10 xl:mb-12">
-    <div className="relative w-70 sm:w-40 md:w-48 lg:w-[25rem] xl:w-[25rem]">
+<div className="mb-25 sm:mb-25 md:mb-25 lg:mb-10 xl:mb-12">
+    <div className="relative w-50 sm:w-70 md:w-70 lg:w-[25rem] xl:w-[25rem]">
       <img
         src={Profile}
         alt="Profile"
