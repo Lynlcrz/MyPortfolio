@@ -11,6 +11,7 @@ import gitIcon from "../assets/git.png";
 import githubIcon from "../assets/github.png";
 import GithubIcon from "../assets/Github1.png";
 import javaIcon from "../assets/java.png";
+import jimireneImage from '../assets/jimirene.jpg';
 import jsIcon from "../assets/js.png";
 import linkedinIcon from "../assets/linkedin.png";
 import mongoDBIcon from "../assets/mongodb.png";
@@ -228,7 +229,7 @@ export default function Home() {
     </div>
     <button
   onClick={handlePrevSlide}
-  className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-40 backdrop-blur-lg text-white p-2 rounded-full text-xl"
+  className="absolute left-0 top-1/2 transform h-10 w-10 -translate-y-1/2 bg-black bg-opacity-40 backdrop-blur-lg text-white p-2 rounded-full text-xl"
 >
   &lt;
 </button>
@@ -264,7 +265,7 @@ export default function Home() {
               key={`${index}-${subIndex}`}
               src={subIcon}
               alt="Skill Logo"
-              className="w-13 h-13 sm:w-20 sm:h-20 object-contain"
+              className="w-11 h-13 sm:w-20 sm:h-20 object-contain"
             />
           ))}
         </div>
@@ -281,23 +282,64 @@ export default function Home() {
 
         
 
-        {/* Projects */}
-        <section
-          id="projects"
-          className="min-h-screen flex items-center justify-center bg-white text-black p-6"
-        >
-          <div className="text-center w-[90vw] max-w-[80rem]">
-            <h3 className="text-5xl font-semibold mb-6">Projects</h3>
-            <p className="text-xl leading-relaxed">
-              Take a look at some of the projects I’ve built with love.
-            </p>
-          </div>
-        </section>
+<section id="projects" className="min-h-screen bg-white text-black py-16 px-6">
+  <div className="max-w-7x2  mx-auto">
+    <h3 className="text-5xl font-bold mb-3 lg:mt-20 text-center">Projects!</h3>
 
-        <section id="contact" className="min-h-screen flex items-center justify-center bg-gray-900 text-white p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-16">
+    <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+      {[
+        {
+          title: "Jimirene Maternity Clinic - Clinic Management System",
+          date: "April 7, 2025",
+          image: jimireneImage,
+          link: "/projects/jimirene",
+        },
+        {
+          title: "",
+          date: "April 2, 2025",
+          image: "/assets/jimirene.jpg",
+          link: "/projects/drowsiness",
+        },
+        {
+          title: "",
+          date: "March 18, 2025",
+          image: "/path-to-image3.jpg",
+          link: "/projects/story-ai",
+        },
+      ].map((project, index) => (
+        <a
+          key={index}
+          href={project.link}
+          className="group block rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:scale-[1.03] transition duration-300 mt-0 lg:mt-30 bg-white"
+        >
+          <div className="relative h-90"> {/* Increased from h-52 to h-64 */}
+  <img
+    src={project.image}
+    alt={project.title}
+    className="w-full h-full object-cover"
+  />
+  <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition duration-300 flex items-end p-4">
+    <h4 className="text-lg font-semibold text-gray-200">{project.title}</h4>
+  </div>
+</div>
+
+          <div className="p-4 text-gray-300">
+            <p className="text-sm mb-2">{project.date}</p>
+            <span className="text-teal-400 hover:underline">Read more →</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+
+
+        <section id="contact" className="min-h-screen flex items-center justify-center bg-white text-gray-900 p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-16">
   <div className="w-full max-w-3xl text-center">
     <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold mb-6 md:mb-5">
-      Contact
+      Contact me!
     </h2>
 
     <form
@@ -315,7 +357,7 @@ export default function Home() {
           type="text"
           id="name"
           name="name"
-          className="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          className="w-full px-4 py-2 rounded-lg bg-white border border-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500"
           placeholder="Your Name"
           required
         />
@@ -329,7 +371,7 @@ export default function Home() {
           type="email"
           id="email"
           name="email"
-          className="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          className="w-full px-4 py-2 rounded-lg bg-white border border-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500"
           placeholder="you@example.com"
           required
         />
@@ -343,7 +385,7 @@ export default function Home() {
           id="message"
           name="message"
           rows={5}
-          className="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          className="w-full px-4 py-2 rounded-lg bg-white border border-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500"
           placeholder="Your message..."
           required
         ></textarea>
@@ -351,7 +393,7 @@ export default function Home() {
 
       <button
         type="submit"
-        className="w-full py-3 px-6 rounded-lg bg-indigo-600 hover:bg-indigo-700 transition-colors duration-300 font-semibold"
+        className="w-full py-3 px-6 rounded-lg bg-gray-600 hover:bg-gray-700 text-white transition-colors duration-300 font-semibold"
       >
         Send Message
       </button>
