@@ -231,7 +231,7 @@ const ParticlesBackground = ({ children }: ParticlesBackgroundProps) => {
           h1 {
             font-size: 12vw !important;
             top: 18% !important;
-            left: 21% !important; 
+            left: 22% !important; 
           }
           h3 {
             font-size: 5vw !important;
