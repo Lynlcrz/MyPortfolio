@@ -1,10 +1,6 @@
 "use client";
 import confetti from "canvas-confetti";
-import { useEffect, useRef } from "react";
-import 'swiper/css';
-import 'swiper/css/navigation';
-import { Navigation } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { useEffect, useRef, useState } from "react";
 import sisharp from "../assets/c-sharp.png";
 import carousel1 from '../assets/carousel1.png';
 import carousel2 from '../assets/carousel2.png';
@@ -33,6 +29,8 @@ export default function Home() {
   const isMouseDownRef = useRef(false);
   const startYRef = useRef(0);
   const scrollTopRef = useRef(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slides = [carousel1, carousel2];
 
   const handleMouseDown = (e: MouseEvent) => {
     isMouseDownRef.current = true;
@@ -81,6 +79,15 @@ export default function Home() {
 
     confetti({ ...settings, angle: 60, origin: { x: 0, y: 0.6 } });
     confetti({ ...settings, angle: 120, origin: { x: 1, y: 0.6 } });
+  };
+
+
+  const handleNextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  const handlePrevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
   useEffect(() => {
@@ -199,25 +206,46 @@ export default function Home() {
     {/* You can add a heading or description for the skills section if needed */}
   </div>
 
-  {/* Carousel Section */}
-  <Swiper
-    modules={[Navigation]}
-    navigation
-    spaceBetween={20}
-    slidesPerView={1}
-    loop={true}
-    className="w-full max-w-150 mb-12"
-  >
-    {[carousel1, carousel2].map((image, index) => (
-      <SwiperSlide key={index}>
-        <img
-          src={image}  // Use the imported image
-          alt={`Slide ${index + 1}`}
-          className="w-100% h-100% object-cover rounded-xl shadow-md"
-        />
-      </SwiperSlide>
-    ))}
-  </Swiper>
+
+{/* Carousel Section */}
+<div className="w-full mb-12">
+  <div className="relative max-w-[600px] mx-auto">
+    <div className="overflow-hidden">
+      <div
+        className="flex transition-transform duration-300"
+        style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+      >
+        {slides.map((image, index) => (
+          <div key={index} className="flex-shrink-0 w-full">
+            <img
+              src={image}
+              alt={`Slide ${index + 1}`}
+              className="w-full h-auto sm:h-[400px] lg:h-[500px] object-contain rounded-xl shadow-md"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+    <button
+  onClick={handlePrevSlide}
+  className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-40 backdrop-blur-lg text-white p-2 rounded-full text-xl"
+>
+  &lt;
+</button>
+<button
+  onClick={handleNextSlide}
+  className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-40 backdrop-blur-lg text-white p-2 rounded-full text-xl"
+>
+  &gt;
+</button>
+
+
+
+
+  </div>
+</div>
+
+
 
   <div className="flex flex-col items-center">
   {[
