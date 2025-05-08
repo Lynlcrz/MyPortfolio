@@ -99,20 +99,26 @@ const ParticlesBackground = ({ children }: ParticlesBackgroundProps) => {
       </svg>
 
       <h1 style={{
-        zIndex: 100,
-        width: '100vw',
-        height: '100vh',
-        display: 'flex',
-        position: 'absolute',
-        top: '10%',
-        left: '15%',
-        fontSize: '6vw',
-        color: 'white',
-        opacity: 0.3,
-        textShadow: '1px 1px rgba(0, 0, 0, 0.1)',
-        fontFamily: "'Dongle', sans-serif",
-        margin: 0
-      }}>Hi, I'm Niel</h1>
+  zIndex: 100,
+  width: 'fit-content',
+  whiteSpace: 'nowrap',
+  overflow: 'hidden',
+  borderRight: '3px solid rgba(255, 255, 255, 0.6)',
+  animation: 'typing 3s steps(20, end) infinite alternate, blink 0.75s step-end infinite',
+  height: '100vh',
+  display: 'flex',
+  position: 'absolute',
+  top: '19%',
+  left: '15%',
+  fontSize: '6vw',
+  color: 'white',
+  opacity: 0.3,
+  textShadow: '1px 1px rgba(0, 0, 0, 0.1)',
+  fontFamily: "'Dongle', sans-serif",
+  margin: 0
+}}>
+  Hi, I'm Niel
+</h1>
 
       <h3 style={{
         zIndex: 100,
@@ -121,7 +127,7 @@ const ParticlesBackground = ({ children }: ParticlesBackgroundProps) => {
         display: 'flex',
         position: 'absolute',
         fontSize: '2vw',
-        top: '43%',
+        top: '45%',
         left: '15%',
         color: 'white',
         opacity: 0.3,
@@ -178,6 +184,17 @@ const ParticlesBackground = ({ children }: ParticlesBackgroundProps) => {
       </div>
 
       <style>{`
+
+
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 15ch; }
+  }
+
+  @keyframes blink {
+    0% { border-color: transparent; }
+  }
+
         @keyframes moveInCircle {
           0% { transform: rotate(0deg); }
           50% { transform: rotate(180deg); }
