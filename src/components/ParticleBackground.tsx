@@ -230,12 +230,12 @@ const ParticlesBackground = ({ children }: ParticlesBackgroundProps) => {
         @media (max-width: 480px) {
           h1 {
             font-size: 12vw !important;
-            top: 20% !important;
-            left: 21% !important;
+            top: 18% !important;
+            left: 21% !important; 
           }
           h3 {
             font-size: 5vw !important;
-            top: 35% !important;
+            top: 32% !important;
             left: 28% !important;
           }
         }

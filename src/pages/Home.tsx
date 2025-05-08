@@ -1,10 +1,30 @@
 "use client";
 import confetti from "canvas-confetti";
 import { useEffect, useRef } from "react";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { Navigation } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import sisharp from "../assets/c-sharp.png";
+import carousel1 from '../assets/carousel1.png';
+import carousel2 from '../assets/carousel2.png';
 import cvIcon from "../assets/cv.png";
+import figmaIcon from "../assets/figma.png";
+import firebaseIcon from "../assets/firebase.png";
+import gitIcon from "../assets/git.png";
 import githubIcon from "../assets/github.png";
+import GithubIcon from "../assets/Github1.png";
+import javaIcon from "../assets/java.png";
+import jsIcon from "../assets/js.png";
 import linkedinIcon from "../assets/linkedin.png";
+import mongoDBIcon from "../assets/mongodb.png";
+import mysqlIcon from "../assets/mysql.png";
 import Profile from "../assets/Profile.png";
+import React from "../assets/react.png";
+import tailwindIcon from "../assets/Tailwind CSS.png";
+import typescriptIcon from "../assets/typescript.png";
+import Unity from "../assets/Unity.png";
+import vsCodeIcon from "../assets/Visual Studio Code.png";
 import Navbar from "../components/Navbar";
 import ParticlesBackground from "../components/ParticleBackground";
 
@@ -115,7 +135,7 @@ export default function Home() {
   onClick={handleConfetti}
 >
 <div className="mb-25 sm:mb-25 md:mb-25 lg:mb-10 xl:mb-12">
-    <div className="relative w-50 sm:w-70 md:w-70 lg:w-[25rem] xl:w-[25rem]">
+    <div className="relative w-55 sm:w-70 md:w-70 lg:w-[25rem] xl:w-[25rem]">
       <img
         src={Profile}
         alt="Profile"
@@ -170,36 +190,67 @@ export default function Home() {
 
       {/* Main Sections */}
       <main className="relative z-10">
-        {/* About */}
-        <section
-          id="about"
-          className="min-h-screen flex flex-col items-center justify-center bg-white text-black p-6 md:p-8"
+     {/* About */}
+     <section
+  id="skills"
+  className="min-h-screen flex flex-col items-center justify-center bg-white text-black p-6 md:p-8"
+>
+  <div className="text-center w-[90vw] max-w-[64rem] mb-12">
+    {/* You can add a heading or description for the skills section if needed */}
+  </div>
+
+  {/* Carousel Section */}
+  <Swiper
+    modules={[Navigation]}
+    navigation
+    spaceBetween={20}
+    slidesPerView={1}
+    loop={true}
+    className="w-full max-w-150 mb-12"
+  >
+    {[carousel1, carousel2].map((image, index) => (
+      <SwiperSlide key={index}>
+        <img
+          src={image}  // Use the imported image
+          alt={`Slide ${index + 1}`}
+          className="w-100% h-100% object-cover rounded-xl shadow-md"
+        />
+      </SwiperSlide>
+    ))}
+  </Swiper>
+
+  <div className="flex flex-col items-center">
+  {[
+    React, Unity, sisharp, jsIcon, typescriptIcon,
+    javaIcon, vsCodeIcon, tailwindIcon, mongoDBIcon, mysqlIcon,
+    gitIcon, GithubIcon, firebaseIcon, figmaIcon,
+  ].map((icon, index, arr) => {
+    if (index % 5 === 0) {
+      return (
+        <div
+          key={index}
+          className="flex flex-wrap justify-center gap-4 mb-6 w-full max-w-screen-lg"
         >
-          <div className="text-center w-[90vw] max-w-[64rem] mb-12">
-            <h2 className="text-5xl font-semibold mb-6">About Me</h2>
-            <p className="text-xl leading-relaxed">
-              I'm a web developer passionate about building great experiences.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-6xl">
-            <div className="bg-gray-100 rounded-2xl p-6 hover:scale-[1.02] transition-transform shadow-md">
-              <h3 className="text-xl font-bold mb-2">Frontend</h3>
-              <p>Skilled in React, Tailwind CSS, and responsive UIs.</p>
-            </div>
-            <div className="bg-gray-100 rounded-2xl p-6 hover:scale-[1.02] transition-transform shadow-md">
-              <h3 className="text-xl font-bold mb-2">Backend</h3>
-              <p>Experience with Node.js, Express, and Firebase.</p>
-            </div>
-            <div className="bg-gray-100 rounded-2xl p-6 hover:scale-[1.02] transition-transform shadow-md">
-              <h3 className="text-xl font-bold mb-2">Design</h3>
-              <p>UI/UX design using Figma and Adobe tools.</p>
-            </div>
-            <div className="bg-gray-100 rounded-2xl p-6 hover:scale-[1.02] transition-transform shadow-md">
-              <h3 className="text-xl font-bold mb-2">Projects</h3>
-              <p>Built full-stack apps and collaborative tools.</p>
-            </div>
-          </div>
-        </section>
+          {arr.slice(index, index + 5).map((subIcon, subIndex) => (
+            <img
+              key={`${index}-${subIndex}`}
+              src={subIcon}
+              alt="Skill Logo"
+              className="w-13 h-13 sm:w-20 sm:h-20 object-contain"
+            />
+          ))}
+        </div>
+      );
+    }
+    return null;
+  })}
+</div>
+
+
+
+</section>
+
+        
 
         {/* Projects */}
         <section
@@ -207,7 +258,7 @@ export default function Home() {
           className="min-h-screen flex items-center justify-center bg-white text-black p-6"
         >
           <div className="text-center w-[90vw] max-w-[80rem]">
-            <h2 className="text-5xl font-semibold mb-6">Projects</h2>
+            <h3 className="text-5xl font-semibold mb-6">Projects</h3>
             <p className="text-xl leading-relaxed">
               Take a look at some of the projects I’ve built with love.
             </p>
@@ -216,12 +267,9 @@ export default function Home() {
 
         <section id="contact" className="min-h-screen flex items-center justify-center bg-gray-900 text-white p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-16">
   <div className="w-full max-w-3xl text-center">
-    <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold mb-6 md:mb-8">
+    <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold mb-6 md:mb-5">
       Contact
     </h2>
-    <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl leading-relaxed text-gray-300 mb-10">
-      Let's work together! Get in touch with me.
-    </p>
 
     <form
       action="https://api.web3forms.com/submit"
