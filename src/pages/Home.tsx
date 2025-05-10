@@ -4,7 +4,6 @@ import type { ReactNode } from 'react';
 import { useEffect, useRef, useState } from 'react';
 import sisharp from "../assets/c-sharp.png";
 import certificateIcon from '../assets/carousel1.png';
-import carousel2 from '../assets/carousel2.png';
 import cvIcon from "../assets/cv.png";
 import figmaIcon from "../assets/figma.png";
 import firebaseIcon from "../assets/firebase.png";
@@ -294,9 +293,7 @@ export default function Home() {
   const isMouseDownRef = useRef(false);
   const startYRef = useRef(0);
   const scrollTopRef = useRef(0);
-  const [currentSlide, setCurrentSlide] = useState(0);
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
-  const [isHovering, setIsHovering] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -304,9 +301,8 @@ export default function Home() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
-  const [activeTech, setActiveTech] = useState<number | null>(null);
   
-  const slides = [carousel2];
+ 
   const techIcons = [React, Unity, sisharp, jsIcon, typescriptIcon, javaIcon, vsCodeIcon, tailwindIcon, mongoDBIcon, mysqlIcon, gitIcon, GithubIcon, firebaseIcon, figmaIcon];
 
   const projects = [
@@ -848,9 +844,8 @@ export default function Home() {
       className="flex h-full transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)]"
       style={{ transform: `translateX(-${currentIndex * 100}%)` }}
     >
-      {certifications.map((cert, index) => (
+      {certifications.map((index) => (
         <div 
-          key={index} 
           className="w-full flex-shrink-0 flex items-center justify-center px-16"
         >
           <div className="relative w-full h-full max-w-6xl group/card">
