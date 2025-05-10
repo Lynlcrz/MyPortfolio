@@ -299,7 +299,7 @@ export default function Home() {
     email: '',
     message: ''
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   
  
@@ -410,7 +410,6 @@ export default function Home() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
     
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -433,7 +432,6 @@ export default function Home() {
     } catch (error) {
       console.error("Error submitting form:", error);
     } finally {
-      setIsSubmitting(false);
     }
   };
 
@@ -844,7 +842,7 @@ export default function Home() {
       className="flex h-full transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)]"
       style={{ transform: `translateX(-${currentIndex * 100}%)` }}
     >
-      {certifications.map((index) => (
+      {certifications.map(() => (
         <div 
           className="w-full flex-shrink-0 flex items-center justify-center px-16"
         >
