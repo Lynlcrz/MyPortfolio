@@ -299,7 +299,6 @@ export default function Home() {
     email: '',
     message: ''
   });
-  const [setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   
  
