@@ -15,7 +15,6 @@ import typescriptIcon from "../assets/typescript.png";
 import Unity from "../assets/Unity.png";
 import vsCodeIcon from "../assets/Visual Studio Code.png";
 
-// Added descriptions for each technology
 const techData = [
   { 
     icon: ReactIcon, 
@@ -163,8 +162,8 @@ const SkillsSection = () => {
       </div>
 
       <div className="text-center w-[90vw] max-w-[64rem] mb-8 md:mb-12 z-10">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6">
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+        <h2 className="mt-10 lg:mt-20 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6">
+          <span className=" text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
             My Tech Stack
           </span>
         </h2>
@@ -178,9 +177,30 @@ const SkillsSection = () => {
         ref={containerRef}
         className="relative w-full max-w-4xl mx-auto min-h-[50vh] md:min-h-[70vh] flex items-center justify-center overflow-visible"
       >
+        {/* Orbit lines */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          {/* Inner orbit line */}
+          <div 
+            className="absolute rounded-full border border-gray-600/30"
+            style={{
+              width: isMobile ? '200px' : '300px',
+              height: isMobile ? '200px' : '300px',
+            }}
+          ></div>
+          
+          {/* Outer orbit line */}
+          <div 
+            className="absolute rounded-full border border-gray-600/30"
+            style={{
+              width: isMobile ? '320px' : '440px',
+              height: isMobile ? '320px' : '440px',
+            }}
+          ></div>
+        </div>
+
         {/* Central glowing core with interactive pulse */}
         <div 
-          className="absolute z-10 w-16 h-16 md:w-24 md:h-24 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 shadow-xl shadow-cyan-500/30 cursor-pointer"
+          className="absolute z-10 w-16 h-16 md:w-24 md:h-24 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 shadow-xl shadow-cyan-500/30 cursor-pointer flex items-center justify-center"
           onMouseEnter={() => {
             setActiveOrbit(null);
             setHoveredTech(null);
@@ -192,6 +212,9 @@ const SkillsSection = () => {
             transition: 'all 0.3s ease',
           }}
         >
+          <p className="text-sm md:text-lg text-white font-medium z-20">
+            SKILLS
+          </p>
           <div className="absolute inset-0 rounded-full bg-cyan-400/40 animate-ping opacity-75"></div>
           <div className="absolute -inset-2 md:-inset-4 rounded-full bg-cyan-500/20 blur-xl"></div>
         </div>
