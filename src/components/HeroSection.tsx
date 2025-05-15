@@ -34,7 +34,7 @@ const HeroSection = () => {
             <img 
               src={Profile} 
               alt="Profile" 
-              className="w-full h-auto relative rounded-full object-cover shadow-xl transition-transform duration-300 ease-in-out hover:scale-105 border-4 border-opacity-20 border-purple-500 hover:border-opacity-40"
+              className="w-full h-auto relative rounded-full object-cover shadow-xl transition-transform duration-300 ease-in-out hover:scale-105 "
             />
             <div className="absolute inset-0 flex items-center justify-center rounded-full backdrop-blur-sm bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <span className="text-white text-lg md:text-xl font-semibold px-4 py-2">
