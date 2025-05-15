@@ -198,7 +198,6 @@ const SkillsSection = () => {
 
         {/* First Orbit (inner ring) */}
         {orbit1Tech.map((tech, index) => {
-          const totalSkills = orbit1Tech.length;
           const angle = (index * orbit1AngleStep) + (mousePos.x / window.innerWidth * (isMobile ? 5 : 10));
           const distance = isMobile ? 100 : 150;
           const orbitSpeed = 35 + (index * 2);
