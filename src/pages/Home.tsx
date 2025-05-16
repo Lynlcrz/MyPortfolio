@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef } from 'react';
 import githubLogo from '../assets/github.png';
-import instagramLogo from '../assets/insta.png';
+import instagramLogo from '../assets/Insta.png';
 import twitterLogo from '../assets/linkedin.png';
 import CertificationsSection from '../components/CertificationsSection';
 import ContactSection from '../components/ContactSection';
