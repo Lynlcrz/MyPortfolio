@@ -1,5 +1,8 @@
 "use client";
 import { useEffect, useRef } from 'react';
+import githubLogo from '../assets/github.png';
+import instagramLogo from '../assets/insta.png';
+import twitterLogo from '../assets/linkedin.png';
 import CertificationsSection from '../components/CertificationsSection';
 import ContactSection from '../components/ContactSection';
 import HeroSection from '../components/HeroSection';
@@ -72,150 +75,16 @@ export default function Home() {
   return (
     <div ref={containerRef} className="relative min-h-screen w-full overflow-x-hidden bg-gray-900 cosmic-bg">
       <style>{`
-        :root {
-          --cosmic-primary: #8A2BE2;
-          --cosmic-secondary: #4B0082;
-          --cosmic-accent: #7B68EE;
-          --cosmic-light: #9370DB;
-          --cosmic-lighter: #BA55D3;
+        /* ... (keep all your existing styles) ... */
+        
+        .footer {
+          background: linear-gradient(to right, #1B2735, #090A0F);
+          border-top: 1px solid rgba(255, 255, 255, 0.2);
         }
         
-        html, body {
-          margin: 0;
-          padding: 0;
-          height: 100%;
-          width: 100%;
-          overflow-x: hidden;
-          scroll-behavior: smooth;
-          font-family: 'Inter', Arial, sans-serif;
-          background-color: #0f172a;
-          color: #e2e8f0;
-        }
-        
-        .cosmic-bg {
-          background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
-        }
-        
-        ::selection {
-          background: rgba(138, 43, 226, 0.3);
-        }
-        
-        .tech-icon:hover {
-          transform: translateY(-5px) scale(1.1);
-          filter: drop-shadow(0 0 8px rgba(138, 43, 226, 0.6));
-        }
-        
-        .project-card {
-          transition: all 0.3s ease;
-          background: linear-gradient(145deg, #1e293b, #0f172a);
-          border: 1px solid rgba(138, 43, 226, 0.1);
-          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
-        
-        .project-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 10px 25px rgba(138, 43, 226, 0.3);
-          border-color: rgba(138, 43, 226, 0.3);
-        }
-        
-        .project-card::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 3px;
-          background: linear-gradient(90deg, var(--cosmic-primary), var(--cosmic-accent));
-          transform: scaleX(0);
-          transform-origin: left;
-          transition: transform 0.3s ease;
-        }
-        
-        .project-card:hover::before {
-          transform: scaleX(1);
-        }
-        
-        .form-input {
-          background: rgba(15, 23, 42, 0.7);
-          border: 1px solid rgba(138, 43, 226, 0.2);
-          transition: all 0.3s ease;
-          color: white;
-        }
-        
-        .form-input:focus {
-          outline: none;
-          border-color: var(--cosmic-primary);
-          box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.2);
-        }
-        
-        .submit-btn {
-          background: linear-gradient(135deg, var(--cosmic-primary), var(--cosmic-accent));
-          transition: all 0.3s ease;
-        }
-        
-        .submit-btn:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
-        }
-        
-        .submit-btn:active {
-          transform: translateY(0);
-        }
-        
-        .carousel-btn {
-          backdrop-filter: blur(10px);
-          transition: all 0.3s ease;
-        }
-        
-        .carousel-btn:hover {
-          background-color: rgba(138, 43, 226, 0.3);
-        }
-        
-        .social-icon {
-          transition: all 0.3s ease;
-        }
-        
-        .social-icon:hover {
-          transform: scale(1.2) rotate(10deg);
-          filter: drop-shadow(0 0 5px rgba(138, 43, 226, 0.5));
-        }
-        
-        @keyframes float {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-10px); }
-        }
-        
-        .floating {
-          animation: float 3s ease-in-out infinite;
-        }
-        
-        @keyframes floatAround {
-          0% { transform: translate(0, 0); }
-          25% { transform: translate(50px, 50px); }
-          50% { transform: translate(100px, 0); }
-          75% { transform: translate(50px, -50px); }
-          100% { transform: translate(0, 0); }
-        }
-        
-        .cosmic-gradient-text {
-          background: linear-gradient(90deg, var(--cosmic-primary), var(--cosmic-accent), var(--cosmic-light));
-          -webkit-background-clip: text;
-          background-clip: text;
-          color: transparent;
-        }
-        
-        .cosmic-border {
-          border: 1px solid rgba(138, 43, 226, 0.3);
-        }
-        
-        .cosmic-border:hover {
-          border-color: rgba(0, 0, 0, 0.6);
-          box-shadow: 0 0 15px rgba(138, 43, 226, 0.4);
-        }
-
-        @keyframes orbit {
-          0% { transform: rotate(0deg) translate($px) rotate(0deg); }
-          100% { transform: rotate(360deg) translate($px) rotate(-360deg); }
+        .footer-link:hover {
+          color: var(--cosmic-accent);
+          transform: translateX(3px);
         }
       `}</style>
       
@@ -225,6 +94,62 @@ export default function Home() {
       <CertificationsSection />
       <ProjectsSection />
       <ContactSection />
+      
+{/* Footer Section */}
+{/* Footer Section */}
+<footer className="footer py-12 px-4 sm:px-6 lg:px-8">
+  <div className="max-w-7xl mx-auto">
+    <div className="flex flex-col items-center">
+      {/* Social Icons - Centered */}
+      <div className="flex justify-center space-x-6">
+        <a 
+          href="https://github.com/Lynlcrz" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="social-icon hover:opacity-80 transition-opacity duration-300"
+        >
+          <img 
+            src={githubLogo} 
+            alt="GitHub" 
+            className="w-8 h-8 object-contain filter drop-shadow-lg hover:drop-shadow-xl transition-all duration-300"
+            style={{ filter: 'drop-shadow(0 0 4px rgba(29, 161, 242, 0.4))' }}
+          />
+        </a>
+        <a 
+          href="https://www.linkedin.com/in/aya-ay-lyniel-cris-s-201850305/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="social-icon hover:opacity-80 transition-opacity duration-300"
+        >
+          <img 
+            src={twitterLogo} 
+            alt="Twitter" 
+            className="w-8 h-8 object-contain filter drop-shadow-lg hover:drop-shadow-xl transition-all duration-300"
+            style={{ filter: 'drop-shadow(0 0 4px rgba(29, 161, 242, 0.4))' }}
+          />
+        </a>
+        <a 
+          href="https://www.instagram.com/lynlcrz/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="social-icon hover:opacity-80 transition-opacity duration-300"
+        >
+          <img 
+            src={instagramLogo} 
+            alt="Instagram" 
+            className="w-8 h-8 object-contain filter drop-shadow-lg hover:drop-shadow-xl transition-all duration-300"
+            style={{ filter: 'drop-shadow(0 0 4px rgba(29, 161, 242, 0.4))' }}
+          />
+        </a>
+      </div>
+
+      {/* Copyright - Centered */}
+      <div className="mt-8 pt-8 border-t border-gray-800 text-center text-white text-sm">
+        <p>© {new Date().getFullYear()} Lyniel Cris Aya-ay. All rights reserved.</p>
+      </div>
     </div>
+  </div>
+</footer>
+</div>
   );
 };
