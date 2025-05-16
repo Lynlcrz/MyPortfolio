@@ -94,7 +94,7 @@ const ContactSection = () => {
       </div>
 
       <div className="relative w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl text-center z-10">
-        <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-semibold mb-6 sm:mb-8 md:mb-10 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300 hover:from-purple-400 hover:to-blue-300 transition-all duration-500">
+        <h2 className="mt-20 lg:mt-10  mb-10 lg:mb-20 text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300">
           Contact Me!
         </h2>
         

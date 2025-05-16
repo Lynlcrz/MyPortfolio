@@ -101,19 +101,21 @@ const ParticlesBackground = ({ children }: { children?: ReactNode }) => {
       <h1 style={{
         zIndex: 100, whiteSpace: 'nowrap', overflow: 'hidden', borderRight: '3px solid rgba(255, 255, 255, 0.6)',
         animation: 'typing 3s steps(20, end) infinite alternate, blink 0.75s step-end infinite',
-        height: '100vh', position: 'absolute', top: '19%', left: '15%', fontSize: '6vw', 
-        color: 'rgba(173, 216, 230, 0.8)',
-        opacity: 0.3, textShadow: '0 0 10px rgba(135, 206, 250, 0.7)',
+        height: '100vh', position: 'absolute', top: '30%', left: '14.5%', fontSize: '4vw', 
+        color: 'rgba(255, 255, 255, 0.8)',
+        opacity: 1, textShadow: '0 0 10px rgba(135, 206, 250, 0.7)',
         fontFamily: "'Dongle', sans-serif", margin: 0
       }}>Hi, I'm Niel</h1>
       
       <h3 style={{
-        zIndex: 100, position: 'absolute', fontSize: '2vw', top: '45%', left: '15%', 
-        color: 'rgba(173, 216, 230, 0.6)',
-        opacity: 0.3, textShadow: '0 0 5px rgba(135, 206, 250, 0.5)',
+        zIndex: 100, position: 'absolute', fontSize: '1.5vw', top: '45%', left: '14.8%', 
+        color: 'white',
+        opacity: 0.7, textShadow: '0 0 5px rgba(135, 206, 250, 0.5)',
         fontFamily: "'Dongle', sans-serif", margin: 0
       }}>Lyniel Cris S. Aya-ay</h3>
-      
+
+
+
       <div style={{ filter: 'url(#goo) blur(40px)', width: '100%', height: '100%', boxShadow: '0 30px 25px rgba(0, 0, 0, 0.5)' }}>
         {[...Array(10)].map((_, i) => {
           const colors = [

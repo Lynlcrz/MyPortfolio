@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import clickSound from "../assets/click.mp3"; // ✅ Import sound from assets
 import "./Navbar.css";
 
 const sections = ["home", "skills", "certifications", "projects", "contact"];
@@ -11,13 +12,19 @@ const Navbar: React.FC<NavbarProps> = ({ className = "", ...rest }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({});
 
+  // ✅ Function to play the click sound
+  const playClickSound = () => {
+    const audio = new Audio(clickSound);
+    audio.currentTime = 0;
+    audio.play().catch((err) => console.log("Click sound error:", err));
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -25,7 +32,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = "", ...rest }) => {
     const observerOptions = {
       root: null,
       rootMargin: "0px",
-      threshold: 0.6, // Adjust this threshold as needed
+      threshold: 0.6,
     };
 
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
@@ -60,6 +67,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = "", ...rest }) => {
   const scrollToSection = (id: string): void => {
     const element = document.getElementById(id);
     if (element) {
+      playClickSound(); // ✅ Play sound on scroll
       element.scrollIntoView({ behavior: "smooth" });
       setMenuOpen(false);
     }
@@ -73,7 +81,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = "", ...rest }) => {
       <div className="navbar-container">
         <div className="navbar-brand" onClick={() => scrollToSection("home")}>
           <span className="logo-code">{`</>`}</span>
-          <span className="logo-text">DevPortfolio</span>
+          <span className="logo-text">Niel.Dev</span>
         </div>
 
         <ul className="navbar-links">
@@ -102,7 +110,10 @@ const Navbar: React.FC<NavbarProps> = ({ className = "", ...rest }) => {
 
         <button
           className={`hamburger ${menuOpen ? "open" : ""}`}
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={() => {
+            playClickSound(); // ✅ Sound on menu toggle
+            setMenuOpen(!menuOpen);
+          }}
           aria-label="Toggle menu"
         >
           <span className="hamburger-line"></span>
@@ -128,12 +139,6 @@ const Navbar: React.FC<NavbarProps> = ({ className = "", ...rest }) => {
             ))}
           </ul>
         </div>
-      </div>
-
-      <div className="navbar-background">
-        <div className="circuit-line"></div>
-        <div className="circuit-line"></div>
-        <div className="circuit-node"></div>
       </div>
     </nav>
   );

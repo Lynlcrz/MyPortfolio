@@ -150,6 +150,7 @@ const SkillsSection = () => {
     setHoveredTech(null);
     setActiveOrbit(null);
   };
+  
 
   return (
     <section 
@@ -162,15 +163,29 @@ const SkillsSection = () => {
       </div>
 
       <div className="text-center w-[90vw] max-w-[64rem] mb-8 md:mb-12 z-10">
-        <h2 className="mt-10 lg:mt-20 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6">
-          <span className=" text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+        <h2 className="mt-0 lg:mt-20 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6">
+          <span className=" text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
             My Tech Stack
           </span>
         </h2>
-        <p className="text-sm md:text-lg text-gray-300 max-w-2xl mx-auto">
-          Technologies I've mastered to build exceptional digital experiences
-        </p>
       </div>
+
+
+ {/* Stars */}
+        {[...Array(50)].map((_, i) => (
+          <div 
+            key={i}
+            className="absolute rounded-full bg-white"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              width: `${Math.random() * 3 + 1}px`,
+              height: `${Math.random() * 3 + 1}px`,
+              opacity: Math.random() * 0.5 + 0.3,
+              animationDuration: `${Math.random() * 5 + 3}s`
+            }}
+          />
+        ))}
 
       {/* Interactive solar system */}
       <div 
