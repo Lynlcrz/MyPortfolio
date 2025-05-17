@@ -5,10 +5,12 @@ import figmaIcon from "../assets/figma.png";
 import firebaseIcon from "../assets/firebase.png";
 import gitIcon from "../assets/git.png";
 import GithubIcon from "../assets/Github1.png";
+import illustratorIcon from "../assets/illustrator.png"; // Add this import
 import javaIcon from "../assets/java.png";
 import jsIcon from "../assets/js.png";
 import mongoDBIcon from "../assets/mongodb.png";
 import mysqlIcon from "../assets/mysql.png";
+import photoshopIcon from "../assets/photoshop.png"; // Add this import
 import ReactIcon from "../assets/react.png";
 import tailwindIcon from "../assets/Tailwind CSS.png";
 import typescriptIcon from "../assets/typescript.png";
@@ -85,6 +87,16 @@ const techData = [
     icon: figmaIcon, 
     name: "Figma", 
     description: "Collaborative interface design tool that works in the browser with real-time collaboration." 
+  },
+  { 
+    icon: photoshopIcon, 
+    name: "Photoshop", 
+    description: "Industry-standard raster graphics editor for photo editing, digital painting, and graphic design." 
+  },
+  { 
+    icon: illustratorIcon, 
+    name: "Illustrator", 
+    description: "Professional vector graphics software for creating logos, icons, drawings, typography, and illustrations." 
   },
 ];
 

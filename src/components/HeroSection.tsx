@@ -54,7 +54,7 @@ import ParticlesBackground from './ParticlesBackground';
         
         {/* Description Paragraph - Added Here */}
         <div className="absolute top-[62.3%] lg:top-[32%] left-1/2 lg:left-[27%] transform -translate-x-1/2 z-[200] w-full max-w-[90vw] md:max-w-[80vw] lg:max-w-[26vw] px-4 text-center lg:text-left">
-          <p className="text-white/40 text-sm text-[12px] sm:text-base md:text-lg lg:text-xl font-light leading-relaxed tracking-wide">
+          <p className="text-white/60 text-sm text-[12px] sm:text-base md:text-lg lg:text-xl font-light leading-relaxed tracking-wide">
             Motivated Computer Science student with a strong foundation in programming and experience in web and desktop application development. Skilled in problem-solving, with a passion for full-stack development, databases, and IoT. Quick to learn new tools and thrive in collaborative, innovative environments.
           </p>
         </div>

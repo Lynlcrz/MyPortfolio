@@ -30,7 +30,7 @@ import TEMPHU from '../assets/Temphu.png';
         image: NaviGAZE, 
         link: "https://github.com/Arjayy007/NaviGaze-Indoor-Navigation",
         description: "Navigaze, a mobile application for indoor navigation on our University Campus.",
-        technologies: ["Three.js", "React", "NASA API"],
+        technologies: ["Unity 6", "Firebase", "Blender"],
         status: "completed"
       },
       {
@@ -40,7 +40,7 @@ import TEMPHU from '../assets/Temphu.png';
         image: SIS, 
         link: "https://github.com/mawrk19/Student-Information-System",
         description: "This SIS will boost student experiences, increase administrative effectiveness, and offer insightful data on how well the institution is performing.",
-        technologies: ["TypeScript", "Storybook", "Framer"],
+        technologies: ["JavaFX", "SceneBuilder", "MySQL"],
         status: "completed"
       },
       {
@@ -50,7 +50,7 @@ import TEMPHU from '../assets/Temphu.png';
         image: TEMPHU, 
         link: "https://temphu-67a04.web.app/",
         description: "Temphu is an IoT-based system that monitors temperature and humidity levels in real time.",
-        technologies: ["Python", "Qiskit", "Next.js"],
+        technologies: ["React-TS", "C/C++", "Firebase", "ESP8266", "DHT22"],
         status: "completed"
       },
       {
@@ -60,7 +60,7 @@ import TEMPHU from '../assets/Temphu.png';
         image: Restaurant, 
         link: "https://github.com/Xine003/restaurant-managent-system",
         description: "Theoretical space travel planner with orbital mechanics visualization.",
-        technologies: ["WebGL", "React Three", "D3.js"],
+        technologies: ["C#", "MySQL"],
         status: "completed"
       },
       {
